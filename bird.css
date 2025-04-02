@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+.all-content{
+    background: white;
+}
+/* navbar */
+.nav-link{
+    color: black;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: 0.3s ;
+    text-align:center ;
+    
+}
+.nav-link:hover{
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    transform: translateY(-5px);
+}
+.navbar-text{
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.5s ease;
+}
+.nav-item{
+    padding-left: 10px;
+}
+#btn{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+#btn:hover{
+    background-color:green;
+    color: white;
+    transform: scale(1.04);
+}
+
+/* marquee */
+#marquee{
+    background-color:rgb(240, 231, 231);
+    color:black;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* home */
+#home{
+    border-radius: 10px;
+   
+}
+.btn1{
+    background-color:green;
+    color: white;
+    text-decoration: none;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 12px ;
+    transition: 0.9s;
+}
+.btn1:hover{
+    background-color: black;
+    transform: scale(1.04);
+}
+#homepara{
+    word-spacing: 5px;
+    color:black;
+    font-style: normal;
+    word-spacing: 5px;
+    margin-top: 20px;
+}
+
+/* about*/
+#about{
+    margin-top: 20px;
+}
+#about h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 40px;
+}
+#h2{
+    font-weight: bold;
+    text-align: center;
+}
+#about .card{
+    border: 1px solid white;
+    transition: 0.9s;
+}
+.card:hover{
+    transform: scale(1.04);
+}
+#about p{
+    color:black;
+    font-style: normal;
+    word-spacing: 5px;
+    margin-top: 20px;
+}
+#bt button{
+    width: 150px;
+    height: 32px;
+    letter-spacing: 3px;
+    background-color:green;
+    color:white;
+    border: solid;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 12px ;
+    transition: 0.9s;
+}
+#bt button:hover{
+    transform: scale(1.04);
+    color:white;
+    background-color: black;
+}
+
+/* gallary */
+#gallery{
+    margin-top: 20px;
+}
+
+#gallery h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 40px;
+}
+
+#gallery .card{
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+}
+
+#gallery .overlay{
+    opacity: 0;
+    width: 100%;
+    color:white;
+    text-shadow: 1px 1px 1px;
+}
+
+#gallery .card:hover .overlay{
+    opacity: 5;
+    margin-top: 20%;
+    transition: 0.5s ease;
+}
+
+/* pets */
+#pt{
+text-align: center;
+font-weight: bold;
+margin-top: 40px;
+text-shadow: 1px 1px 1px black;
+margin-bottom: 40px;
+}
+
+.card h-100{
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.card h-100:hover{
+    transition: 0.5s ease;
+}
+/* contact */
+#contact{
+    margin-top: 20px;
+}
+#contact h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#contact textarea::placeholder{
+    color: black
+
+}
+
+/* footer */
+#foot{
+    margin-top: 40px;
+}
+#h5{
+    color:white;
+    font-weight: bold;
+}
+#h5:hover{
+    color:green;
+    font-weight: bold;
+}
+
+/*order */
+#btn1{
+    background-color: green;
+    color: white;
+    border: 2px solid black;
+}
+#order{
+    margin-top: 50px;
+}

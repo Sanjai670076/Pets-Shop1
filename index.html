@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birds SHOP</title>
+  
+  <link rel="shortcut icon" type="image" href="image/logo 0.avif">
+  <!-- CSS -->
+   <link rel="stylesheet" href="bird.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- icons links -->
+  <link href='' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- animation links -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#"> <img src="images/birdlogo.jpeg" alt="" width="50px" height="50px">  PET SHOP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home"> <i class="fa-solid fa-house" id="home1"></i>  Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#about"> <i class="fa-solid fa-address-card" id="home1"></i>  About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#gallery"><i class="fa-solid fa-image"></i>  Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#pets"> <i class="fa-solid fa-feather"></i> Pets </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#contact"> <i class="fa-solid fa-phone"></i>  Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal"
+                data-bs-target="#loginModal"><i class="fa-solid fa-user"></i>  Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+            <i class="fas fa-comment"></i> Feedback
+          </a>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" onsubmit="return validateLoginForm()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <script>
+    // JavaScript function to validate login form
+    function validateLoginForm() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      
+      if (username === '' || password === '') {
+        alert('Please enter both username and password.');
+        return false; 
+      } else {
+        alert('Login successful!');
+        return true;
+      }
+    }
+  </script>
+   
+  <!-- Feedback Modal -->
+  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackModalLabel">Feedback Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="feedbackForm" onsubmit="return validateFeedbackForm()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="rating" class="form-label">Rating</label>
+              <select class="form-select" id="rating" required>
+                <option value="">Choose a rating</option>
+                <option value="5">Excellent</option>
+                <option value="4">Very Good</option>
+                <option value="3">Good</option>
+                <option value="2">Fair</option>
+                <option value="1">Poor</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="feedback" class="form-label">Feedback</label>
+              <textarea class="form-control" id="feedback" rows="4" placeholder="Enter your feedback" required></textarea>
+            </div>
+            <button type="submit"  id="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Validation -->
+  <script>
+    function validateFeedbackForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const rating = document.getElementById("rating").value;
+      const feedback = document.getElementById("feedback").value;
+
+      if (!name || !email || !rating || !feedback) {
+        alert("Please fill out all fields before submitting.");
+        return false;
+      }
+      alert("Thank you for your feedback!");
+      return true;
+    }
+  </script>
+
+<!-- MARQUEE -->
+ <marquee behavior="" direction="" id="marquee">  Contact Us : +91 98765 43210. || Pet Shop : @ Kookyland, Mettupalayam, Coimbatore || Address : Mettupalayam, Coimbatore - 641301.</marquee>
+ 
+<!-- HOME -->
+ <section class=" bg-light" class="carousel slide" data-ride="carousel" data-aos="zoom-in-up" 
+ data-aos-duration="1500">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-md-6">
+              <img src="images/about01.jpeg"  width="600px" height="200px" class="img-fluid" alt="" id="home"> 
+          </div>
+          <div class="col-md-6">
+              <h2 id="h2">Welcome to Our Pet Shop</h2>
+              <p id="homepara"><b><span style="color: green;">WELCOME TO THE PET SHOP: </span></b>Pet Shop is a sanctuary dedicated to the beauty and preservation of bird species from around the world. We offer a unique opportunity to observe these amazing creatures up close in naturalistic settings.</p>
+              <p id="homepara">Our mission is to educate, inspire, and support bird conservation efforts. Whether you're a bird enthusiast or just looking for a peaceful day surrounded by nature, Birds Park offers something special for everyone.</p>
+               
+              <a href="#about" class="btn1" >Learn More</a>
+          </div>
+      </div>
+  </div>
+</section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
+        </script>
+
+<!--about-->
+<div class="container" id="about" data-aos="fade-up" data-aos-duration="1500" >
+  <h1 class="text-center">ABOUT US</h1>
+  <div class="row align-items-center">
+    <div class="col-md-6 py-3">
+      <div class="card">
+        <img src="images/about.jpeg" alt="Birds Park Image" class="card-img-top img-fluid">
+      </div>
+    </div>
+      
+    <div class="col-md-6 py-3">
+      <h2 class="h2">A very unique open Pet Shop!</h2>
+      <p><b><span class="text-success">Pet Shop:</span></b> "Birds Park is a peaceful sanctuary where visitors can experience the beauty of birds from all over the world. Our park is home to a variety of bird species, each with unique colors, calls, and behaviors.
+        <br><br> We’re dedicated to protecting these amazing creatures and educating people about the importance of preserving their natural habitats."</p>
+      <div>
+        <a href="#about" class="btn1" >Read More</a>
+      
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+ 
+<!-- Gallery Section -->
+<section id="gallery" data-aos="fade-up" data-aos-duration="1500" >
+  <div class="container">
+    <h1 class="text-center ">GALLERY</h1>
+
+    <div class="row">
+      <!-- First Row -->
+      <div class="col-md-4 mb-4">
+        <div class="card position-relative">
+          <div class="overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center  bg-opacity-50">
+            <h3 class="text-center text-white">Fish</h3>
+          </div>
+          <img src="images/fish.jpeg" alt="Fish" class="card-img-top img-fluid">
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card position-relative">
+          <div class="overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center  bg-opacity-50">
+            <h3 class="text-center text-white">Cat</h3>
+          </div>
+          <img src="images/cat.jpeg" alt="Cat" class="card-img-top img-fluid">
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card position-relative">
+          <div class="overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center  bg-opacity-50">
+            <h3 class="text-center text-white">Dog</h3>
+          </div>
+          <img src="images/dog.jpeg" alt="Dog" class="card-img-top img-fluid">
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4" data-aos="fade-up" data-aos-duration="1500">
+      <!-- Second Row -->
+      <div class="col-md-4 mb-4">
+        <div class="card position-relative">
+          <div class="overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center  bg-opacity-50">
+            <h3 class="text-center text-white">Rabbit</h3>
+          </div>
+          <img src="images/rabbit.jpeg" alt="Rabbit" class="card-img-top img-fluid">
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card position-relative">
+          <div class="overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center  bg-opacity-50">
+            <h3 class="text-center text-white">Mouse</h3>
+          </div>
+          <img src="images/mouse.jpeg" alt="Mouse" class="card-img-top img-fluid">
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card position-relative">
+          <div class="overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center  bg-opacity-50">
+            <h3 class="text-center text-white">Parrot</h3>
+          </div>
+          <img src="images/parrot (1).jpeg" alt="Parrot" class="card-img-top img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- pets -->
+<section id="pets" >
+<div class="container " data-aos="fade-up" 
+data-aos-duration="1500"  >
+  <div class="row">
+    <!-- First Row: 4 Cards -->
+    <h1 class="text-center " id="pt">PETS</h1>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/fish2.jpeg" class="card-img-top" alt="Fish" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">FISH</h5>
+          <p class="card-text">This fish is known for its vibrant colors.</p>
+          <a href="#" class="btn btn-primary" id="btn1" onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/pet2.jpeg" class="card-img-top" alt="Cat" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">CAT</h5>
+          <p class="card-text">This cat is known for its playful nature personality.</p>
+          <a href="#" class="btn btn-primary" id="btn1"  onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/rabbit1.jpeg" class="card-img-top" alt="Rabbit" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">RABBIT</h5>
+          <p class="card-text">This rabbit is soft, fluffy, and loves to hop around.</p>
+          <a href="#" class="btn btn-primary" id="btn1"  onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/squirrel.jpeg" class="card-img-top" alt="Squirrel" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">SQUIRREL</h5>
+          <p class="card-text">This squirrel is energetic and loves collecting acorns.</p>
+          <a href="#" class="btn btn-primary" id="btn1"  onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row: 4 More Cards -->
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/pigeon.jpeg" class="card-img-top" alt="Pigeon" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">PIGEON</h5>
+          <p class="card-text">This pigeon is a symbol of peace and loves to fly.</p>
+          <a href="#" class="btn btn-primary" id="btn1"  onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/parrot2.jpeg" class="card-img-top" alt="Parrot" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">PARROT</h5>
+          <p class="card-text">This parrot has beautiful feathers and can sounds.</p>
+          <a href="#" class="btn btn-primary" id="btn1"  onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/bee.jpeg" class="card-img-top" alt="Bee" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">BEE</h5>
+          <p class="card-text">This bee is vital for pollination and  honey.</p>
+          <a href="#" class="btn btn-primary" id="btn1"  onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="images/dogs.jpeg" class="card-img-top" alt="Dog" width="250px" height="200px">
+        <div class="card-body text-center">
+          <h5 class="card-title">DOG</h5>
+          <p class="card-text">This dog is loyal, friendly, and a great companion.</p>
+          <a href="#" class="btn btn-primary" id="btn1"  onclick="showAnimalName('Fish')">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<script>
+  // JavaScript function to show an alert with the animal's name
+  function showAnimalName(animal) {
+    alert("You clicked on " + animal + "!");
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- book buy order -->
+<section   id="order" data-aos="fade-up"
+data-aos-duration="1500">
+<div class="about"  data-aos="fade-up" data-aos-duration="1500">
+  <div class="container text-center">
+  <h1 style="text-align: center;"> ORDER BUY BOOKING</h1>
+    <img src="images/pet.jpeg" alt="Cat" class="img-fluid mb-4 about-img">
+    <h3 style="color:green;">PET SHOP!!</h3>
+    <p>A pet shop or pet store is an essential services retailer which sells animals and pet care resources.</p>
+    <button type="button" id="btn1" class="btn btn-outline-primary"  class="btn1" data-bs-toggle="modal" data-bs-target="#orderModal">
+      ORDER 
+    </button>
+  </div>
+</div>
+</section>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderModalLabel"> Order Buy Booking</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Order Form -->
+        <form id="orderForm" novalidate>
+          <div class="mb-3">
+            <label for="itemName" class="form-label">Item Name</label>
+            <input type="text" class="form-control" id="itemName" placeholder="Enter item name" required>
+            <div class="invalid-feedback">Please enter an item name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" min="1" value="1" required>
+            <div class="invalid-feedback">Please enter a valid quantity.</div>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price per Item</label>
+            <input type="number" class="form-control" id="price" value="1000" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="totalPrice" class="form-label">Total Price</label>
+            <input type="text" class="form-control" id="totalPrice" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="customerName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btn1" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btn1" onclick="submitOrder()">Submit Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript Code -->
+<script>
+  const pricePerItem = 1000; 
+  const quantityInput = document.getElementById('quantity');
+  const totalPriceInput = document.getElementById('totalPrice');
+
+  function updateTotalPrice() {
+    const quantity = parseInt(quantityInput.value) || 1;
+    const totalPrice = quantity * pricePerItem;
+    totalPriceInput.value = `${totalPrice.toFixed(2)}`;
+  }
+
+  quantityInput.addEventListener('input', updateTotalPrice);
+
+  function submitOrder() {
+    const itemName = document.getElementById("itemName").value;
+    const quantity = quantityInput.value;
+    const price = document.getElementById("price").value;
+    const customerName = document.getElementById("customerName").value;
+
+    if (itemName && quantity && price && customerName) {
+      alert(`Order Confirmed!\nItem: ${itemName}\nQuantity: ${quantity}\nPrice per Item: $${price}\nTotal Price: $${quantity * price}\nCustomer: ${customerName}`);
+      const orderModal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+      orderModal.hide();
+    } else {
+      alert("Please fill out all fields before submitting.");
+    }
+  }
+
+  document.getElementById('orderModal').addEventListener('show.bs.modal', () => {
+    quantityInput.value = 1;
+    updateTotalPrice();
+  });
+
+  updateTotalPrice();
+</script>
+
+<!-- Contact Section -->
+<div class="container mt-5" data-aos="fade-up"
+data-aos-duration="1500">
+  <center id="contact">
+    <h1 style="text-align: center;">CONTACT</h1>
+  </center>
+  
+  <form id="contactForm" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" required>
+      <div class="invalid-feedback">
+        Please enter your name.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" required>
+      <div class="invalid-feedback">
+        Please enter a valid email.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control" id="message" rows="4" required></textarea>
+      <div class="invalid-feedback">
+        Please enter a message.
+      </div>
+    </div>
+
+    <button type="submit" class="btn1" style="width: 70px;">Submit</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (this.checkValidity()) {
+      alert("Thank you! Your message has been sent successfully.");
+      this.reset();
+      this.classList.remove('was-validated');
+    } else {
+      this.classList.add('was-validated');
+    }
+  });
+</script>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white pt-5 pb-4" id="foot" data-aos="fade-up"
+data-aos-duration="1500">
+  <div class="container text-center text-md-start">
+    <div class="row text-center text-md-start">
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4" id="h5">Pet Shop</h5>
+        <p>
+          Discover the beauty of nature with a variety of bird species. Our mission is to protect and celebrate birdlife in a peaceful, eco-friendly environment.
+        </p>
+      </div>
+
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4" id="h5">Quick Links</h5>
+        <p><a href="#about" class="text-white" style="text-decoration: none;">About Us</a></p>
+        <p><a href="#gallery" class="text-white" style="text-decoration: none;">Gallery</a></p>
+        <p><a href="#birds" class="text-white" style="text-decoration: none;">Pets</a></p>
+        <p><a href="#contact" class="text-white" style="text-decoration: none;">Contact</a></p>
+      </div>
+
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4" id="h5">Contact</h5>
+        <p><i class="fas fa-home mr-3"></i> Pet Shop,Mettupalayam,Coimbatore.</p>
+        <p><i class="fas fa-envelope mr-3"></i> @Petshop.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +91 98765 43210</p>
+      </div>
+
+      <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4" id="h5">Follow Us</h5>
+        <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white me-4"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="row align-items-center mt-4">
+      <div class="col-md-7 col-lg-8 text-center">
+        <p style="text-align: center;">© Sanjisha  2024 PET SHOP. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
